@@ -15,19 +15,15 @@ include "config.php";
     $phone = $_POST['phone'];
 
 
-    $sql = "INSERT INTO `Users`(`firstname`, `lastname`, `gender`, `email`, `phone`) VALUES ('$first_name','$last_name'
-,'$gender','$email','$phone')";
+    $sql = "INSERT INTO `Users`(`firstname`, `lastname`, `gender`, `email`, `phone`) VALUES ('$first_name','$last_name','$gender','$email','$phone')";
 
     $result = $conn->query($sql);
 
     if ($result == TRUE) {
-
       echo "New record created successfully.";
-
-    }else{
-
+    }
+    else{
       echo "Error:". $sql . "<br>". $conn->error;
-
     } 
 
     $conn->close(); 
