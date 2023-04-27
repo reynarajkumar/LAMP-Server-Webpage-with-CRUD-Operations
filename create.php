@@ -3,17 +3,11 @@
 include "config.php";
 
   if (isset($_POST['submit'])) {
-
     $first_name = $_POST['firstname'];
-
     $last_name = $_POST['lastname'];
-
-    $gender = $_POST['gender'];
-    
+    $gender = $_POST['gender'];   
     $email = $_POST['email'];
-
     $phone = $_POST['phone'];
-
 
     $sql = "INSERT INTO `Users`(`firstname`, `lastname`, `gender`, `email`, `phone`) VALUES ('$first_name','$last_name','$gender','$email','$phone')";
 
@@ -27,7 +21,6 @@ include "config.php";
     } 
 
     $conn->close(); 
-
   }
 
 ?>
@@ -36,55 +29,44 @@ include "config.php";
 
 <html>
 
-<body>
+  <body>
+  <h2>Signup Form</h2>
 
-<h2>Signup Form</h2>
+  <form action="" method="POST">
 
-<form action="" method="POST">
+    <fieldset>
 
-  <fieldset>
+      <legend>Personal information:</legend>
 
-    <legend>Personal information:</legend>
+      First name:<br>
+      <input type="text" name="firstname">
+      <br>
 
-    First name:<br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br>
 
-    <input type="text" name="firstname">
+      Gender:<br>
+      <input type="radio" name="gender" value="Male">Male
+      <input type="radio" name="gender" value="Female">Female
+      <br>
 
-    <br>
+      email:<br>
+      <input type="email" name="email">
+      <br>
 
-    Last name:<br>
+      Phone:<br>
+      <input type="text" name="phone">
+      <br><br>
 
-    <input type="text" name="lastname">
+      <input type="submit" name="submit" value="submit">
 
-    <br>
+    </fieldset>
 
-    Gender:<br>
-
-    <input type="radio" name="gender" value="Male">Male
-
-    <input type="radio" name="gender" value="Female">Female
-    <br>
-
-    email:<br>
-
-    <input type="email" name="email">
-
-    <br>
-
-    Phone:<br>
-
-    <input type="text" name="phone">
-
-    <br><br>
-
-    <input type="submit" name="submit" value="submit">
-
-  </fieldset>
-
-</form>
-      <p>
-         Go back to home page: <a href="https://ec2-18-220-146-166.us-east-2.compute.amazonaws.com/index.html">here</a>
-      </p>
-</body>
+  </form>
+        <p>
+           Go back to home page: <a href="https://ec2-18-220-146-166.us-east-2.compute.amazonaws.com/index.html">here</a>
+        </p>
+  </body>
 
 </html>
