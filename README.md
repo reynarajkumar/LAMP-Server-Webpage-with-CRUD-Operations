@@ -1,4 +1,4 @@
-# LAMP Server Webpage App with CRUD Operations
+# LAMP Server Web App with CRUD Operations
 
 Publicly accessible website running on a LAMP server. The website can take user input and store it in the database, display contents from the database, and perform CRUD operations on the database.
 
